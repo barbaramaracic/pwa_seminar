@@ -163,3 +163,15 @@ p.category-text {
 main {
     margin-bottom: 200px; /* same value as the footer height */
 }
+.section-divider {
+    border: none; /* Remove default border */
+    height: 5px; /* Set height for thicker line */
+    background-color: #5b4a4a; /* Set color for the line */
+    margin-bottom: 20px;
+    width: 100%; /* Add margin to create space between sections */
+}
+
+.articles img {
+    max-width: 500px; /* Limit the picture size to fit its container */
+    height: auto; /* Maintain aspect ratio */
+}

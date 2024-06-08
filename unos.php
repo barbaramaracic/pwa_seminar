@@ -1,24 +1,6 @@
-<!DOCTYPE html>
-<html lang="hr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Unos vijesti</title>
-</head>
-<body>
-    <header>
-        <h1>Le Monde</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="politika.html">Politika</a></li>
-                <li><a href="sport.html">Sport</a></li>
-                <li><a href="kultura.html">Kultura</a></li>
-                <li><a href="unos.php">Unos vijesti</a></li>
-            </ul>
-        </nav>
-    </header>
+<?php
+include 'header.php';
+?>
     <main>
         <section class="content">
             <h2 class="centered">Unos vijesti</h2>
@@ -41,11 +23,10 @@
                 move_uploaded_file($_FILES['slika']['tmp_name'], $target_dir);
 
                 // Insert data into database
-                $query = "INSERT INTO Vijesti (datum, naslov, kratki_sadrzaj, sadrzaj, slika, kategorija, arhiva) 
-                          VALUES (NOW(), '$naslov', '$kratki_sadrzaj', '$sadrzaj', '$slika', '$kategorija', '$arhiva')";
-
-                $result = mysqli_query($dbc, $query) or die('Error querying database: ' . mysqli_error($dbc));
-
+                $query = "INSERT INTO Vijesti (datum, naslov, kratki_sadrzaj, sadrzaj, slika, kategorija, arhiva, vijest_time) 
+                VALUES (NOW(), '$naslov', '$kratki_sadrzaj', '$sadrzaj', '$slika', '$kategorija', '$arhiva', NOW())";
+  
+      $result = mysqli_query($dbc, $query) or die('Error querying database: ' . mysqli_error($dbc));
                 // Close database connection
                 mysqli_close($dbc);
 
@@ -86,8 +67,8 @@
             </form>
         </section>
     </main>
-    <footer>
-        <p>Ime i prezime autora, kontakt e-mail adresa, 2024</p>
-    </footer>
+    <?php
+include 'footer.php';
+?>
 </body>
 </html>
