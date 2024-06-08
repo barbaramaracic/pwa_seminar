@@ -15,14 +15,46 @@
                 <li><a href="politika.html">Politika</a></li>
                 <li><a href="sport.html">Sport</a></li>
                 <li><a href="kultura.html">Kultura</a></li>
-                <li><a href="unos.html">Unos vijesti</a></li>
+                <li><a href="unos.php">Unos vijesti</a></li>
             </ul>
         </nav>
     </header>
     <main>
         <section class="content">
             <h2 class="centered">Unos vijesti</h2>
-            <form action="skripta.php" method="POST" enctype="multipart/form-data">
+            <?php
+            // Include the database connection file
+            include 'connect.php';
+
+            // Check if form data is submitted
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                // Retrieve form data
+                $naslov = $_POST['naslov'];
+                $kratki_sadrzaj = $_POST['kratki_sadrzaj'];
+                $sadrzaj = $_POST['sadrzaj'];
+                $kategorija = $_POST['kategorija'];
+                $arhiva = isset($_POST['arhiva']) ? 1 : 0;
+
+                // Handle file upload
+                $slika = $_FILES['slika']['name'];
+                $target_dir = 'images/' . $slika;
+                move_uploaded_file($_FILES['slika']['tmp_name'], $target_dir);
+
+                // Insert data into database
+                $query = "INSERT INTO Vijesti (datum, naslov, kratki_sadrzaj, sadrzaj, slika, kategorija, arhiva) 
+                          VALUES (NOW(), '$naslov', '$kratki_sadrzaj', '$sadrzaj', '$slika', '$kategorija', '$arhiva')";
+
+                $result = mysqli_query($dbc, $query) or die('Error querying database: ' . mysqli_error($dbc));
+
+                // Close database connection
+                mysqli_close($dbc);
+
+                // Display success message
+                echo '<p>Vijest uspješno unesena!</p>';
+            }
+            ?>
+
+            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" enctype="multipart/form-data">
                 <label for="naslov">Naslov vijesti</label>
                 <input type="text" id="naslov" name="naslov" required>
                 
