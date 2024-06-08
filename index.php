@@ -15,7 +15,7 @@ $result_kultura = mysqli_query($dbc, $query_kultura);
 
 <main>
     <section class="content">
-    <hr class="section-divider"> <!-- Add a thicker line between sections -->
+        <hr class="section-divider"> <!-- Add a thicker line between sections -->
         <h2>Sport</h2>
         <div class="articles">
             <?php
@@ -23,7 +23,7 @@ $result_kultura = mysqli_query($dbc, $query_kultura);
             while ($row_sport = mysqli_fetch_array($result_sport)) {
                 echo '<article>';
                 echo '<img src="' . UPLPATH . $row_sport['slika'] . '" alt="' . $row_sport['naslov'] . '">';
-                echo '<h3>' . $row_sport['naslov'] . '</h3>';
+                echo '<h3 class="title"><a href="clanak.php?id=' . $row_sport['id'] . '">' . $row_sport['naslov'] . '</a></h3>';
                 echo '</article>';
             }
             ?>
@@ -31,7 +31,7 @@ $result_kultura = mysqli_query($dbc, $query_kultura);
     </section>
 
     <section class="content">
-    <hr class="section-divider"> <!-- Add a thicker line between sections -->
+        <hr class="section-divider"> <!-- Add a thicker line between sections -->
         <h2>Kultura</h2>
         <div class="articles">
             <?php
@@ -39,7 +39,7 @@ $result_kultura = mysqli_query($dbc, $query_kultura);
             while ($row_kultura = mysqli_fetch_array($result_kultura)) {
                 echo '<article>';
                 echo '<img src="' . UPLPATH . $row_kultura['slika'] . '" alt="' . $row_kultura['naslov'] . '">';
-                echo '<h3>' . $row_kultura['naslov'] . '</h3>';
+                echo '<h3 class="naslov"><a href="clanak.php?id=' . $row_kultura['id'] . '">' . $row_kultura['naslov'] . '</a></h3>';
                 echo '</article>';
             }
             ?>

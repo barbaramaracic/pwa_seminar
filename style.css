@@ -43,6 +43,7 @@ nav ul li a:hover {
 
 main {
     flex: 1;
+    margin-bottom: 200px; /* same value as the footer height */
 }
 
 .content {
@@ -78,6 +79,7 @@ article p {
     font-size: 16px;
     color: #666;
 }
+
 .footer-space {
     height: 50px; /* Adjust the height as needed */
     width: 100%;
@@ -92,6 +94,7 @@ footer {
     position: fixed;
     bottom: 0;
 }
+
 .centered {
     text-align: center;
 }
@@ -151,6 +154,7 @@ p.category-text {
     color: #666;
     font-weight: bold;
 }
+
 .content p, .content h2 {
     margin-bottom: 15px;
 }
@@ -160,9 +164,7 @@ p.category-text {
     margin: 20px auto;
     max-width: 100%;
 }
-main {
-    margin-bottom: 200px; /* same value as the footer height */
-}
+
 .section-divider {
     border: none; /* Remove default border */
     height: 5px; /* Set height for thicker line */
@@ -174,4 +176,14 @@ main {
 .articles img {
     max-width: 500px; /* Limit the picture size to fit its container */
     height: auto; /* Maintain aspect ratio */
+}
+
+/* Styling for the article titles */
+.naslov a, .title a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Use the same color as the surrounding text */
+}
+
+.naslov a:hover, .title a:visited, .title a:active {
+    color: inherit; /* Ensure the color remains the same in all states */
 }
