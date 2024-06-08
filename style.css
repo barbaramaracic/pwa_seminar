@@ -78,14 +78,18 @@ article p {
     font-size: 16px;
     color: #666;
 }
+.footer-space {
+    height: 50px; /* Adjust the height as needed */
+    width: 100%;
+}
 
 footer {
     background-color: #333;
     color: #fff;
     text-align: center;
     padding: 10px 0;
-    position: fixed;
     width: 100%;
+    position: fixed;
     bottom: 0;
 }
 .centered {
@@ -141,4 +145,21 @@ form button {
 form button[type="reset"] {
     background-color: #f0f0f0;
     color: #333;
+}
+
+p.category-text {
+    color: #666;
+    font-weight: bold;
+}
+.content p, .content h2 {
+    margin-bottom: 15px;
+}
+
+.content img {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+}
+main {
+    margin-bottom: 200px; /* same value as the footer height */
 }
