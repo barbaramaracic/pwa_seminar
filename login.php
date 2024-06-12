@@ -45,6 +45,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     Lozinka: <input type="password" name="lozinka" required><br>
     <input type="submit" value="Prijavi se">
 </form>
-
+<?php
+include 'footer.php';
+?>
 </body>
 </html>

@@ -45,6 +45,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     Prezime: <input type="text" name="prezime"><br>
     <input type="submit" value="Registriraj se">
 </form>
-
+<?php
+include 'footer.php';
+?>
 </body>
 </html>

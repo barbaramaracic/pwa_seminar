@@ -239,3 +239,38 @@ tr:hover {
     margin-top: -10px; /* Adjust this value as needed */
     margin-bottom: 10px; /* Ensure there is some space below */
 }
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5; /* Lighter background color */
+}
+
+.article-box {
+    background-color: #ffffff; /* White background for the article box */
+    padding: 20px;
+    border: 1px solid #ccc; /* Border around the article box */
+    max-width: 600px; /* Maximum width of the article box */
+    width: 100%; /* Ensures the box takes full width of its container */
+    text-align: left; /* Aligns all text to the left */
+    margin-left: 33%;
+    margin-top: 1%;
+}
+
+.article-content {
+    margin: 0 auto; /* Centers the content horizontally */
+}
+
+.article-content img {
+    display: block; /* Ensures the image is treated as a block element */
+    max-width: 100%; /* Limits image width to fit inside the container */
+    height: auto; /* Maintains aspect ratio of the image */
+}
+.category-text {
+    color: #666; /* Gray color */
+    font-weight: bold; /* Bold font */
+    margin: 0; /* Remove default margin */
+    padding: 10px; /* Add padding for spacing */
+    text-transform: uppercase;
+}
