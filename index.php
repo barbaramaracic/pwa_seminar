@@ -22,7 +22,7 @@ $result_kultura = mysqli_query($dbc, $query_kultura);
             // Display articles for the Sport category
             while ($row_sport = mysqli_fetch_array($result_sport)) {
                 echo '<article>';
-                echo '<img src="' . UPLPATH . $row_sport['slika'] . '" alt="' . $row_sport['naslov'] . '">';
+                echo '<img src="' . UPLPATH . $row_sport['slika'] . '" alt="' . $row_sport['naslov'] . '" style="width:100%; height:auto;">';
                 echo '<h3 class="title"><a href="clanak.php?id=' . $row_sport['id'] . '">' . $row_sport['naslov'] . '</a></h3>';
                 echo '</article>';
             }
@@ -38,7 +38,7 @@ $result_kultura = mysqli_query($dbc, $query_kultura);
             // Display articles for the Culture category
             while ($row_kultura = mysqli_fetch_array($result_kultura)) {
                 echo '<article>';
-                echo '<img src="' . UPLPATH . $row_kultura['slika'] . '" alt="' . $row_kultura['naslov'] . '">';
+                echo '<img src="' . UPLPATH . $row_kultura['slika'] . '" alt="' . $row_kultura['naslov'] . '" style="width:100%; height:auto;">';
                 echo '<h3 class="naslov"><a href="clanak.php?id=' . $row_kultura['id'] . '">' . $row_kultura['naslov'] . '</a></h3>';
                 echo '</article>';
             }
