@@ -55,6 +55,11 @@ if ($_SESSION['admin']) {
 
     <h1>Administratorska stranica</h1>
 
+    <!-- Dodaj logout gumb -->
+    <form action="logout.php" method="post">
+        <input type="submit" value="Odjava">
+    </form>
+
     <h2>Unosi</h2>
     <table>
         <tr>
@@ -71,7 +76,7 @@ if ($_SESSION['admin']) {
                 <td><?php echo $row['naslov']; ?></td>
                 <td><?php echo $row['kratki_sadrzaj']; ?></td>
                 <td>
-                    <a href="<?php echo $_SERVER['PHP_SELF']; ?>?edit_id=<?php echo $row['id']; ?>">Uredi</a> | 
+                    <a href="<?php echo $_SERVER['PHP_SELF']; ?>?edit_id=<?php echo $row['id']; ?>">Uredi</a> |
                     <a href="<?php echo $_SERVER['PHP_SELF']; ?>?delete_id=<?php echo $row['id']; ?>">Izbriši</a>
                 </td>
             </tr>
@@ -118,7 +123,13 @@ if ($_SESSION['admin']) {
 
     <?php
 } else {
-    echo "Pozdrav, " . $_SESSION['ime'] . " ,nemate dovoljna prava za
+    echo "Pozdrav " . $_SESSION['ime'] . ", nemate dovoljna prava za
 pristup ovoj stranici.";
+?>
+    <!-- Logout button -->
+    <form action="logout.php" method="post">
+        <input type="submit" value="Odjava">
+    </form>
+    <?php
 }
 ?>
