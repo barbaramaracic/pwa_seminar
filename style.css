@@ -195,3 +195,47 @@ p.category-text {
     color: red;
     font-size: 0.9em;
 }
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+table, th, td {
+    border: 1px solid #ddd;
+}
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+}
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+tr:hover {
+    background-color: #f1f1f1;
+}
+.action-buttons a {
+    margin-right: 5px;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: white;
+    background-color: #4CAF50;
+    border-radius: 5px;
+}
+.action-buttons a.delete {
+    background-color: #f44336;
+}
+.error {
+    border: 2px solid red;
+}
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: -10px; /* Adjust this value as needed */
+    margin-bottom: 10px; /* Ensure there is some space below */
+}

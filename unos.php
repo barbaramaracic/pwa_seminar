@@ -1,15 +1,4 @@
 <?php include 'header.php'; ?>
-<style>
-        .error {
-            border: 2px solid red;
-        }
-        .error-message {
-            color: red;
-            font-size: 0.9em;
-            margin-top: -10px; /* Adjust this value as needed */
-            margin-bottom: 10px; /* Ensure there is some space below */
-        }
-    </style>
 <body>
     <main>
         <section class="content">
