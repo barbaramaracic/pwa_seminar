@@ -187,3 +187,11 @@ p.category-text {
 .naslov a:hover, .title a:visited, .title a:active {
     color: inherit; /* Ensure the color remains the same in all states */
 }
+
+.error {
+    border: 2px solid red;
+}
+.error-message {
+    color: red;
+    font-size: 0.9em;
+}
