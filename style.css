@@ -274,3 +274,6 @@ tr:hover {
     padding: 10px; /* Add padding for spacing */
     text-transform: uppercase;
 }
+form {
+    margin-bottom: 100px; /* Adjust this value to match the height of your footer */
+}

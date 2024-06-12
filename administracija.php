@@ -117,7 +117,9 @@ if ($_SESSION['admin']) {
         $stmt->close();
     }
     ?>
-
+<?php
+include 'footer.php';
+?>
     </body>
     </html>
 
