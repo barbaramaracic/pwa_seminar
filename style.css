@@ -53,6 +53,11 @@ main {
 .content h2 {
     font-size: 24px;
     color: #333;
+    margin-bottom: 15px;
+}
+
+.content p {
+    margin-bottom: 15px;
 }
 
 .articles {
@@ -106,6 +111,7 @@ form {
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 5px;
+    margin-bottom: 100px;
 }
 
 form label {
@@ -150,19 +156,12 @@ form button[type="reset"] {
     color: #333;
 }
 
-p.category-text {
+.category-text {
     color: #666;
     font-weight: bold;
-}
-
-.content p, .content h2 {
-    margin-bottom: 15px;
-}
-
-.content img {
-    display: block;
-    margin: 20px auto;
-    max-width: 100%;
+    margin: 0;
+    padding: 10px;
+    text-transform: uppercase;
 }
 
 .section-divider {
@@ -190,34 +189,40 @@ p.category-text {
 .error {
     border: 2px solid red;
 }
+
 .error-message {
     color: red;
     font-size: 0.9em;
+    margin-top: -10px;
+    margin-bottom: 10px;
 }
-body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-}
+
 table {
     width: 100%;
     border-collapse: collapse;
 }
+
 table, th, td {
     border: 1px solid #ddd;
 }
+
 th, td {
     padding: 8px;
     text-align: left;
 }
+
 th {
     background-color: #f2f2f2;
 }
+
 tr:nth-child(even) {
     background-color: #f9f9f9;
 }
+
 tr:hover {
     background-color: #f1f1f1;
 }
+
 .action-buttons a {
     margin-right: 5px;
     padding: 5px 10px;
@@ -226,18 +231,11 @@ tr:hover {
     background-color: #4CAF50;
     border-radius: 5px;
 }
+
 .action-buttons a.delete {
     background-color: #f44336;
 }
-.error {
-    border: 2px solid red;
-}
-.error-message {
-    color: red;
-    font-size: 0.9em;
-    margin-top: -10px;
-    margin-bottom: 10px;
-}
+
 .main {
     display: flex;
     justify-content: center;
@@ -265,14 +263,4 @@ tr:hover {
     display: block;
     max-width: 100%;
     height: auto;
-}
-.category-text {
-    color: #666;
-    font-weight: bold;
-    margin: 0;
-    padding: 10px;
-    text-transform: uppercase;
-}
-form {
-    margin-bottom: 100px;
 }
