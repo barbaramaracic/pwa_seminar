@@ -6,7 +6,7 @@ define('UPLPATH', 'images/');
 
 $kategorija = isset($_GET['kategorija']) ? $_GET['kategorija'] : '';
 
-$query = "SELECT id, naslov, kratki_sadrzaj, slika, datum FROM vijesti WHERE arhiva = 0 AND kategorija = '$kategorija' ORDER BY datum DESC";
+$query = "SELECT id, naslov, kratki_sadrzaj, slika, datum FROM vijesti WHERE arhiva = 0 AND kategorija = '$kategorija' ORDER BY datum DESC, vijest_time DESC";
 $result = mysqli_query($dbc, $query);
 
 if (!$result) {

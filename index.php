@@ -4,10 +4,10 @@ include 'connect.php';
 
 define('UPLPATH', 'images/');
 
-$query_sport = "SELECT * FROM vijesti WHERE arhiva = 0 AND kategorija = 'sport' ORDER BY vijest_time DESC LIMIT 3";
+$query_sport = "SELECT * FROM vijesti WHERE arhiva = 0 AND kategorija = 'sport' ORDER BY datum DESC, vijest_time DESC LIMIT 3";
 $result_sport = mysqli_query($dbc, $query_sport);
 
-$query_kultura = "SELECT * FROM vijesti WHERE arhiva = 0 AND kategorija = 'kultura' ORDER BY vijest_time DESC LIMIT 3";
+$query_kultura = "SELECT * FROM vijesti WHERE arhiva = 0 AND kategorija = 'kultura' ORDER BY datum DESC, vijest_time DESC LIMIT 3";
 $result_kultura = mysqli_query($dbc, $query_kultura);
 ?>
 
