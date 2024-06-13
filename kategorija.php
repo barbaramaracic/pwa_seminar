@@ -1,18 +1,15 @@
 <?php
 include 'header.php';
-include 'connect.php'; // Include the file to connect to the database
+include 'connect.php';
 
 define('UPLPATH', 'images/');
 
-// Get category from URL
 $kategorija = isset($_GET['kategorija']) ? $_GET['kategorija'] : '';
 
-// Query to retrieve articles from the specified category
 $query = "SELECT id, naslov, kratki_sadrzaj, slika, datum FROM vijesti WHERE arhiva = 0 AND kategorija = '$kategorija' ORDER BY datum DESC";
 $result = mysqli_query($dbc, $query);
 
 if (!$result) {
-    // If the query fails, display an error
     die('Error querying database: ' . mysqli_error($dbc));
 }
 ?>

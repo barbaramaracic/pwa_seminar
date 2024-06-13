@@ -4,13 +4,12 @@ include 'connect.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $korisnicko_ime = $_POST['korisnicko_ime'];
-    $lozinka = password_hash($_POST['lozinka'], PASSWORD_BCRYPT); // Hashiranje lozinke
+    $lozinka = password_hash($_POST['lozinka'], PASSWORD_BCRYPT);
     $ime = $_POST['ime'];
     $prezime = $_POST['prezime'];
     
     $lozinka_potvrda = $_POST['lozinka_potvrda'];
     
-    // Provjera da li su lozinke identične
     if($_POST['lozinka'] != $_POST['lozinka_potvrda']) {
         echo "Lozinke se ne podudaraju. Molimo unesite ih ponovno.";
     } else {
@@ -40,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <form method="post" action="registracija.php">
     Korisničko ime: <input type="text" name="korisnicko_ime" required><br>
     Lozinka: <input type="password" name="lozinka" required><br>
-    Potvrdite lozinku: <input type="password" name="lozinka_potvrda" required><br> <!-- Dodano polje za potvrdu lozinke -->
+    Potvrdite lozinku: <input type="password" name="lozinka_potvrda" required><br>
     Ime: <input type="text" name="ime"><br>
     Prezime: <input type="text" name="prezime"><br>
     <input type="submit" value="Registriraj se">

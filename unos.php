@@ -40,7 +40,6 @@
                 <label for="kategorija">Kategorija vijesti</label>
                 <select id="kategorija" name="kategorija">
                     <option value="">Odaberite kategoriju</option>
-                    <option value="politika">Politika</option>
                     <option value="sport">Sport</option>
                     <option value="kultura">Kultura</option>
                 </select>

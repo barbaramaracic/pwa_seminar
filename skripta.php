@@ -6,16 +6,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $kategorija = htmlspecialchars($_POST['kategorija']);
     $arhiva = isset($_POST['arhiva']) ? 'Da' : 'Ne';
 
-    // Handle the file upload
     $target_dir = "uploads/";
     if (!is_dir($target_dir)) {
-        mkdir($target_dir, 0777, true); // Create uploads directory if it doesn't exist
+        mkdir($target_dir, 0777, true);
     }
     $target_file = $target_dir . basename($_FILES["slika"]["name"]);
     if (move_uploaded_file($_FILES["slika"]["tmp_name"], $target_file)) {
         $slika = $target_file;
     } else {
-        $slika = 'uploads/default.jpg'; // Default image if upload fails
+        $slika = 'uploads/default.jpg';
     }
 }
 ?>
@@ -51,8 +50,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </section>
         <div class="footer-space"></div>
     </main>
-    <footer>
-        <p>Ime i prezime autora | Kontakt: email@example.com | 2024</p>
-    </footer>
 </body>
 </html>

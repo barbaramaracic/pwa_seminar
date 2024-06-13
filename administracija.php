@@ -9,8 +9,6 @@ if (!isset($_SESSION['korisnicko_ime'])) {
 }
 
 if ($_SESSION['admin']) {
-    // Kod za administraciju
-    // Obrada brisanja
     if (isset($_GET['delete_id'])) {
         $delete_id = $_GET['delete_id'];
         $query = "DELETE FROM Vijesti WHERE id = $delete_id";
@@ -19,7 +17,6 @@ if ($_SESSION['admin']) {
         exit;
     }
 
-    // Obrada uređivanja
     if (isset($_POST['edit_id'])) {
         $edit_id = $_POST['edit_id'];
         $datum = $_POST['datum'];
@@ -39,7 +36,6 @@ if ($_SESSION['admin']) {
         exit;
     }
 
-    // Dohvaćanje unosa iz baze podataka
     $query = "SELECT * FROM Vijesti";
     $result = mysqli_query($dbc, $query) or die('Error querying database.');
 
@@ -55,7 +51,6 @@ if ($_SESSION['admin']) {
 
     <h1>Administratorska stranica</h1>
 
-    <!-- Dodaj logout gumb -->
     <form action="logout.php" method="post">
         <input type="submit" value="Odjava">
     </form>
@@ -84,7 +79,6 @@ if ($_SESSION['admin']) {
     </table>
 
     <?php
-    // Prikaz forme za uređivanje
     if (isset($_GET['edit_id'])) {
         $edit_id = $_GET['edit_id'];
         $query = "SELECT * FROM Vijesti WHERE id = ?";
@@ -128,7 +122,6 @@ include 'footer.php';
     echo "Pozdrav " . $_SESSION['ime'] . ", nemate dovoljna prava za
 pristup ovoj stranici.";
 ?>
-    <!-- Logout button -->
     <form action="logout.php" method="post">
         <input type="submit" value="Odjava">
     </form>
