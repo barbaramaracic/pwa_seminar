@@ -60,17 +60,14 @@
 </body>
 <script>
     function validateForm(event) {
-        // Get form elements
         const naslov = document.getElementById('naslov');
         const kratki_sadrzaj = document.getElementById('kratki_sadrzaj');
         const sadrzaj = document.getElementById('sadrzaj');
         const slika = document.getElementById('slika');
         const kategorija = document.getElementById('kategorija');
 
-        // Validation flags
         let valid = true;
 
-        // Clear previous error messages
         document.querySelectorAll('.error-message').forEach(el => el.remove());
         naslov.classList.remove('error');
         kratki_sadrzaj.classList.remove('error');
@@ -78,7 +75,6 @@
         slika.classList.remove('error');
         kategorija.classList.remove('error');
 
-        // Validate naslov
         if (naslov.value.length < 5 || naslov.value.length > 30) {
             valid = false;
             naslov.classList.add('error');
@@ -88,7 +84,6 @@
             naslov.after(error);
         }
 
-        // Validate kratki_sadrzaj
         if (kratki_sadrzaj.value.length < 10 || kratki_sadrzaj.value.length > 100) {
             valid = false;
             kratki_sadrzaj.classList.add('error');
@@ -98,7 +93,6 @@
             kratki_sadrzaj.after(error);
         }
 
-        // Validate sadrzaj
         if (sadrzaj.value.trim() === '') {
             valid = false;
             sadrzaj.classList.add('error');
@@ -108,7 +102,6 @@
             sadrzaj.after(error);
         }
 
-        // Validate slika
         if (slika.files.length === 0) {
             valid = false;
             slika.classList.add('error');
@@ -118,7 +111,6 @@
             slika.after(error);
         }
 
-        // Validate kategorija
         if (kategorija.value === '') {
             valid = false;
             kategorija.classList.add('error');
@@ -128,7 +120,6 @@
             kategorija.after(error);
         }
 
-        // If form is not valid, prevent submission
         if (!valid) {
             event.preventDefault();
         }
